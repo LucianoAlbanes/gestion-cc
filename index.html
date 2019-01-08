@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title id="txt_title">Gestión CC</title>
+	<link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+	<!-- NavBar -->
+	<div class="navbar-fixed">
+		<nav class="orange lighten-2">
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo">Gestión de cuentas</a>
+				<ul class="right hide-on-med-and-down">
+					<li><a href="index.html">Registro de operaciones</a></li>
+					<li><a href="alta.html">Alta nueva cuenta</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<!-- Cuerpo de la Web -->
+	<div class="container">
+		<!-- IMPORTAR CUENTA -->
+		<div class="row">
+			<div class="divider"></div>
+			<div class="section">
+				<h5>Importar cuenta.</h5>
+				<div class="input-field col s10">
+					<input id="txt_cuenta_importada" type="text" class="validate">
+					<label for="txt_cuenta_importada">JSON de la cuenta</label>
+				</div>
+				<a class="waves-effect waves-light btn orange lighten-1" id="btn_importar">Importar Cuenta</a>
+			</div>
+		</div>
+
+		<!-- MOSTRAR DATOS -->
+		<div class="row">
+			<blockquote>
+				<h6 id="txt_datos_cuenta"></h6>
+			</blockquote>
+		</div>
+
+		<!-- REGISTRAR OPERACIONES -->
+		<div class="divider"></div>
+		<h5>Registrar Operaciones.</h5>
+		<div class="row">
+			<div class="input-field col s6">
+				<select id="type_operation">
+					<optgroup label="Débitos">
+						<option value="8">Extracción</option>
+						<option value="4">Prestamo</option>
+						<option value="1">Pago de servicios</option>
+						<option value="2">Pago de expensas</option>
+						<option value="3">Pagos varios</option>
+						<option value="7">Intereses</option>
+						<option value="6">Ajuste débito</option>
+					</optgroup>
+					<optgroup label="Créditos">
+						<option value="0">Ingreso de dinero</option>
+						<option value="9">Intereses positivos</option>
+						<option value="5">Ajuste crédito</option>
+					</optgroup>
+				</select>
+				<label>Selecione motivo</label>
+			</div>
+			<div class="input-field col s6">
+				<select id="type_canal">
+					<option value="0">Efectivo</option>
+					<option value="1">Ualá 7754</option>
+					<option value="2">Ualá 4696</option>
+					<option value="3">Wilobank 0008</option>
+					<option value="4">Wilobank 1003</option>
+					<option value="5">BNA 6600</option>
+					<option value="6">BNA 2015</option>
+					<option value="7">BNA 4190</option>
+					<option value="8">Manual</option>
+				</select>
+				<label>Selecione canal</label>
+			</div>
+			<div class="input-field col s6">
+				<input id="txt_descripcion" type="text" class="validate">
+				<label for="txt_descripcion">Descripción</label>
+			</div>
+			<div class="input-field col s6">
+				<input id="txt_monto" type="number" step=".01" class="validate">
+				<label for="txt_monto">Monto</label>
+			</div>
+			<a class="waves-effect waves-light btn orange lighten-1" id="btn_registrar">Registrar Operación</a>
+			<a class="waves-effect waves-light btn orange lighten-1" id="btn_registrar_intereses">Registrar Intereses</a>
+		</div>
+		<!-- EXPORTAR CUENTA -->
+		<div class="divider"></div>
+		<h5>Exportar cuenta.</h5>
+		<a class="waves-effect waves-light btn orange lighten-1" id="btn_exportar">Exportar Cuenta</a>
+		<p style="background-color: lightgray" id="txt_cuenta_exportada"></p>
+
+		<!-- MOSTRAR MOVIMIENTOS -->
+		<div class="divider"></div>
+		<h5>Ultimos movimientos</h5>
+		<div class="row">
+			<a class="waves-effect waves-light btn orange lighten-1 col" id="btn_mostrar_ultimos_movimientos">Mostrar ultimos
+				movimientos</a>
+			<div class="switch col">
+				<label>
+					Mostrar Intereses
+					<input id="switch_mostrar_intereses" type="checkbox">
+					<span class="lever"></span>
+				</label>
+			</div>
+		</div>
+		<p id="txt_ultimos_movimientos"></p>
+	</div>
+	<!-- Footer -->
+	<footer class="page-footer grey darken-4">
+		<div class="footer-copyright">
+			<div class="container">
+				Made with &#x2764; and passion in &#x1F1E6;&#x1F1F7; by © Luciano Albanés | October 2018
+				<a class="grey-text text-lighten-4 right" href="https://lucianoalbanes.com">Personal Website</a>
+			</div>
+		</div>
+	</footer>
+
+	<!-- SCRIPTS JS -->
+	<script src="valores.js"></script>
+	<script src="operaciones.js"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>
