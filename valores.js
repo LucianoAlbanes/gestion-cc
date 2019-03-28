@@ -1,5 +1,5 @@
 const INTERESES_DESDE = 0.005
-const CANTIDAD_DE_MOVIMIENTOS_A_MOSTRAR = 20
+const CANTIDAD_DE_MOVIMIENTOS_A_MOSTRAR = 110
 
 const OPERACIONES = [
 	{'name': 'Ingreso de dinero', 'type': 'crédito'}, //0
